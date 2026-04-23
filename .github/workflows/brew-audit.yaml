@@ -34,16 +34,20 @@ jobs:
         run: |
           shopt -s nullglob
           failed=0
+          # Modern `brew audit` no longer accepts file paths — it looks up
+          # formulae by name through the tap that setup-homebrew auto-taps
+          # the current checkout into.
           for f in Formula/*.rb; do
+            name=$(basename "$f" .rb)
             # HEAD-only formulae fail `--online` checks that verify the
             # stable URL, so run audit in the matching mode.
             if grep -q '^\s*url ' "$f"; then
-              echo "::group::brew audit --strict --online $f"
-              brew audit --strict --online "$f" || failed=1
+              echo "::group::brew audit --strict --online ${name}"
+              brew audit --strict --online "$name" || failed=1
               echo "::endgroup::"
             else
-              echo "::group::brew audit --strict (HEAD-only) $f"
-              brew audit --strict "$f" || failed=1
+              echo "::group::brew audit --strict (HEAD-only) ${name}"
+              brew audit --strict "$name" || failed=1
               echo "::endgroup::"
             fi
           done
