@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: Copyright 2026 Carabiner Systems, Inc
+# SPDX-License-Identifier: Apache-2.0
+
+name: brew-audit
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+permissions: {}
+
+jobs:
+  audit:
+    name: brew audit + style
+    runs-on: macos-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@98cfa07b984a61682e6cd3a0833fad2006cc84ba
+
+      - name: brew style
+        run: brew style Formula
+
+      - name: brew audit
+        run: |
+          shopt -s nullglob
+          failed=0
+          for f in Formula/*.rb; do
+            # HEAD-only formulae fail `--online` checks that verify the
+            # stable URL, so run audit in the matching mode.
+            if grep -q '^\s*url ' "$f"; then
+              echo "::group::brew audit --strict --online $f"
+              brew audit --strict --online "$f" || failed=1
+              echo "::endgroup::"
+            else
+              echo "::group::brew audit --strict (HEAD-only) $f"
+              brew audit --strict "$f" || failed=1
+              echo "::endgroup::"
+            fi
+          done
+          exit "$failed"
