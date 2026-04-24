@@ -1,6 +1,6 @@
-# Carabiner Homebrew Tap
+<img src="docs/homebrew-carabiner.png" align="right" width="350" style="margin: 2em;">
 
-<img src="docs/homebrew-carabiner.png" align="right" width="250" style="margin: 2em;">
+# Carabiner Homebrew Tap
 
 Official Homebrew tap for the Carabiner Systems supply-chain tooling.
 
