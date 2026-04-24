@@ -1,11 +1,15 @@
 # Carabiner Homebrew Tap
 
+<img src="docs/homebrew-carabiner.png" width="200" style="float:right; margin: 2em;">
+
 Official Homebrew tap for the Carabiner Systems supply-chain tooling.
 
 ## Usage
 
 ```sh
+# Install the carabiner tap
 brew tap carabiner-dev/tap
+
 brew install bnd        # sigstore bundle + attestation toolkit
 brew install ampel      # AMPEL policy engine
 brew install unpack     # codebase / dependency extractor
