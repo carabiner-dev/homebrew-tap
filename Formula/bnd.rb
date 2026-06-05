@@ -4,8 +4,8 @@
 class Bnd < Formula
   desc "Utility to work with sigstore bundles and in-toto attestations"
   homepage "https://github.com/carabiner-dev/bnd"
-  url "https://github.com/carabiner-dev/bnd/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "f32c7120066ad8238110c7f42a7e8047f32101de849992e12650fe473ee4f177"
+  url "https://github.com/carabiner-dev/bnd/archive/refs/tags/v0.4.3.tar.gz"
+  sha256 "2f9f58ae34038ecb0d1173b10bcc5e9a7d211aa6616a2b0cbefd53be0084cf87"
   license "Apache-2.0"
   head "https://github.com/carabiner-dev/bnd.git", branch: "main"
 
