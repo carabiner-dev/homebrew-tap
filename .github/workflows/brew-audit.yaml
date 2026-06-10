@@ -36,9 +36,16 @@ jobs:
           failed=0
           # Modern `brew audit` no longer accepts file paths — it looks up
           # formulae by name through the tap that setup-homebrew auto-taps
-          # the current checkout into.
+          # the current checkout into. Derive that tap name from the repo
+          # (carabiner-dev/homebrew-tap -> carabiner-dev/tap).
+          tap="${GITHUB_REPOSITORY/homebrew-/}"
+          # Homebrew 5.1.15+ refuses to load formulae from untrusted
+          # third-party taps. Trust our own tap so audits can load it, and
+          # qualify formula names with the tap so a bare name can't resolve
+          # to a colliding homebrew-core formula instead of ours.
+          brew trust "$tap"
           for f in Formula/*.rb; do
-            name=$(basename "$f" .rb)
+            name="${tap}/$(basename "$f" .rb)"
             # HEAD-only formulae fail `--online` checks that verify the
             # stable URL, so run audit in the matching mode.
             if grep -q '^\s*url ' "$f"; then
