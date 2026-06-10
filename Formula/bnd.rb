@@ -12,7 +12,8 @@ class Bnd < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X sigs.k8s.io/release-utils/version.gitVersion=v#{version}"
+    system "go", "build", *std_go_args(ldflags: ldflags)
     generate_completions_from_executable(bin/"bnd", "completion")
   end
 
