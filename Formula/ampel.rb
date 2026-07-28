@@ -4,8 +4,8 @@
 class Ampel < Formula
   desc "Amazing Multipurpose Policy Engine for supply-chain attestations"
   homepage "https://github.com/carabiner-dev/ampel"
-  url "https://github.com/carabiner-dev/ampel/archive/refs/tags/v1.3.3.tar.gz"
-  sha256 "37b595100453ad84115da8e5eee046896b1453eba19bf4a629ba5c1dbe2f90b4"
+  url "https://github.com/carabiner-dev/ampel/archive/refs/tags/v1.3.6.tar.gz"
+  sha256 "a8f8265ef7dafd561a5cdc6e19d693f060e87a151699fa238da8e4c87b9e60f3"
   license "Apache-2.0"
   head "https://github.com/carabiner-dev/ampel.git", branch: "main"
 
