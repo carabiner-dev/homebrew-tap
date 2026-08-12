@@ -4,8 +4,8 @@
 class Snappy < Formula
   desc "Take snapshots of HTTP API responses and attest them as evidence"
   homepage "https://github.com/carabiner-dev/snappy"
-  url "https://github.com/carabiner-dev/snappy/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "3f09ebd36df32464ed182591b77a02a2cf9d5f4891f13f572529b427a3f9b587"
+  url "https://github.com/carabiner-dev/snappy/archive/refs/tags/v0.2.6.tar.gz"
+  sha256 "a7a1db168ecbcc242cb557274a7aa915cf8424c314f182b85d6c1d1679634ed1"
   license "Apache-2.0"
   head "https://github.com/carabiner-dev/snappy.git", branch: "main"
 
