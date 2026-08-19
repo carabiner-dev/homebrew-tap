@@ -4,8 +4,8 @@
 class Unpack < Formula
   desc "Discover codebases and extract dependencies from a project directory"
   homepage "https://github.com/carabiner-dev/unpack"
-  url "https://github.com/carabiner-dev/unpack/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "41cea64b8bb130f862963d56a9892dd7544d7d63663238306e7f7ffb95f2d94b"
+  url "https://github.com/carabiner-dev/unpack/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "9f24c16f7d791a88960860c0f7816ef233667b1f16da94e8472d167d96635a30"
   license "Apache-2.0"
   head "https://github.com/carabiner-dev/unpack.git", branch: "main"
 
