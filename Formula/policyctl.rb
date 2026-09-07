@@ -4,8 +4,8 @@
 class Policyctl < Formula
   desc "Tool to manage AMPEL policies"
   homepage "https://github.com/carabiner-dev/policyctl"
-  url "https://github.com/carabiner-dev/policyctl/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "1cf8ca34e12c2a208d9865dda284764de88ca58aa0c1d86637b548975c558849"
+  url "https://github.com/carabiner-dev/policyctl/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "8489a4b30c76280465a1a3c1cdff5c1b8daa7689b18c52a04dcecf8bf1b6586f"
   license "Apache-2.0"
   head "https://github.com/carabiner-dev/policyctl.git", branch: "main"
 
