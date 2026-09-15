@@ -17,6 +17,7 @@ brew install ampel      # AMPEL policy engine
 brew install unpack     # codebase / dependency extractor
 brew install snappy     # HTTP snapshot attestation tool
 brew install policyctl  # AMPEL policy manager
+brew install drop       # secure-first installer for GitHub releases
 ```
 
 Once a formula is installed, upgrading to the latest release follows the
@@ -33,6 +34,7 @@ brew upgrade bnd       # or any of the above
 |:-----------|:------------------------------------------------------------------------|:--------------|
 | `ampel`    | [carabiner-dev/ampel](https://github.com/carabiner-dev/ampel)           | `v1.2.1`      |
 | `bnd`      | [carabiner-dev/bnd](https://github.com/carabiner-dev/bnd)               | `v0.4.2`      |
+| `drop`     | [carabiner-dev/drop](https://github.com/carabiner-dev/drop)             | `v0.2.0`      |
 | `policyctl`| [carabiner-dev/policyctl](https://github.com/carabiner-dev/policyctl)   | `v0.1.0`      |
 | `snappy`   | [carabiner-dev/snappy](https://github.com/carabiner-dev/snappy)         | `v0.2.3`      |
 | `unpack`   | [carabiner-dev/unpack](https://github.com/carabiner-dev/unpack)         | `v0.2.0`      |
