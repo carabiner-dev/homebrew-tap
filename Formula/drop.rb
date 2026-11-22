@@ -4,8 +4,8 @@
 class Drop < Formula
   desc "Secure-first installer for GitHub releases, verified with AMPEL policies"
   homepage "https://github.com/carabiner-dev/drop"
-  url "https://github.com/carabiner-dev/drop/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "101bbb139310e115f6e25be6f0f78fd2f4ee3e81273ec56c227418cfac3264bb"
+  url "https://github.com/carabiner-dev/drop/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "4fa314f537b640bdbf635e785d5ac98e0aeb5da76900c533e415e0d0d9559824"
   license "Apache-2.0"
   head "https://github.com/carabiner-dev/drop.git", branch: "main"
 
