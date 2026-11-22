@@ -59,3 +59,35 @@ jobs:
             fi
           done
           exit "$failed"
+
+  install:
+    name: brew install + test
+    runs-on: macos-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@98cfa07b984a61682e6cd3a0833fad2006cc84ba
+
+      # Installs every formula the way a user would: drop from its pinned
+      # binary, the rest downloaded and verified with drop against their
+      # release policies.
+      - name: brew install and test
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          failed=0
+          tap="${GITHUB_REPOSITORY/homebrew-/}"
+          brew trust "$tap"
+          for f in Formula/*.rb; do
+            name="${tap}/$(basename "$f" .rb)"
+            echo "::group::brew install ${name}"
+            { brew install "$name" && brew test "$name"; } || failed=1
+            echo "::endgroup::"
+          done
+          exit "$failed"
